@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/sidebar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/summary.css" />
+    <link rel="stylesheet" href="./styles/addTask.css" />
+    <link rel="stylesheet" href="./styles/board.css" />
+    <link rel="stylesheet" href="./styles/contact.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./global_arrays.js"></script>
+    <script src="./scripts/summary.js"></script>
+    <script src="./scripts/addTask.js"></script>    
+    <script src="./scripts/board.js"></script>
+    <script src="./scripts/board-dragdrop.js"></script>
+    <script src="./scripts/board-popups.js"></script>
+    <script src="./scripts/contact.js"></script>
+    <script src="./scripts/contact-colorpicker.js"></script>
+    <script src="./scripts/contact-html.js"></script>
+    <script src="./scripts/nav.js"></script>
+    <script src="./scripts/header.js"></script>
+    <script src="./script.js"></script>
+    <script src="./templates/include-html.js"></script>
+</head>
+<body onload="includeHTML()">
+    <header include-html="../templates/header.html"></header>    
+    <div id="mainDiv" onclick="closeSubmenu()">
+        <div id="sidebar" include-html="../templates/sidebar.html"></div>
+        <div id="summary" class="d-none" include-html="../templates/summary.html"></div>
+        <div id="addTask" class="d-none"></div>
+        <div id="board" class="d-none" include-html="../templates/board.html"></div>
+        <div id="contacts" class="d-none" include-html="../templates/contact.html" onclick="closeDrawer(event)"></div>
+        <div id="help" class="d-none" include-html="../templates/help.html"></div>
+        <div id="privacypolicy" class="d-none" include-html="../templates/privacypolicy.html"></div>
+        <div id="legalnotice" class="d-none" include-html="../templates/legalnotice.html"></div>
+    </div>
+    <div id="transperant" class="d-none" onclick="closeAddTaskBoard()"></div>
+    <div id="message" class="message d-none"></div>
+    <footer id="footer" include-html="../templates/footer.html"></footer>
+</body>
+</html>

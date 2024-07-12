@@ -1,0 +1,70 @@
+<div class="welcomeMsgDiv1 welcomeMsgDiv" id="welcomeMsgDiv">
+    <div class="welcomeText" id="welcomeText"></div>
+    <div class="welcomeTextuserName" id="welcomeTextuserName"></div>
+</div>
+
+<div class="summaryContainer summaryContainer1" id="summaryContainer">
+    <div class="tasksDivContainer">
+        <div class="clockAndTaskContainer">
+            <button class="clockAndDateDiv" onclick="openBoard()">
+                <div class="clockAndTextDiv">
+                    <div class="clockAndTaskNrDiv">
+                        <img src="../assets/img/summary_mobile_clock_icon.png" alt="clock icon"/>
+                        <div class="taskNrDiv" id="tasksUrgent"></div>
+                    </div>
+                    <div class="taskUrgentDiv">Tasks Urgent</div>
+                </div>
+
+                <div class="lineClockAndDateDiv"></div>
+
+                <div class="dateDiv">
+                    <div class="date" id="urgentDate"></div>
+                    <div class="deadlineText">Upcoming Deadline</div>
+                </div>
+            </button>
+        </div>
+            <button class="tasksToDoDiv" onclick="openBoard()">
+                <div class="imgAndNrTasksToDoDiv">
+                    <img src="../assets/img/to-do_icon_task_mobile.png" alt="icon task to-do"/>
+                    <div class="tasksToDoDivNr" id="taskTodo">1</div>
+                </div>  
+                <div class="tasksToDoDivText">Tasks To-do</div>
+            </button>
+        <div class="tasksDiv">
+            <button class="taskDiv" onclick="openBoard()">
+                <div class="taskDivImgAndNr">
+                    <img class="imgTaskDiv" src="../assets/img/task-on-board_icon_mobile.png" alt="icon tasks on board"/>
+                    <div class="tasksDivNr" id="taskInBoardDiv">5</div>
+                </div>
+                <div class="taskDivText">Task in Board</div>
+            </button>           
+        </div>
+        <div class="tasksDiv">
+            <button class="taskDiv" onclick="openBoard()">
+                <div class="taskDivImgAndNr">
+                    <img class="imgTaskDiv" src="../assets/img/task-in-progress_icon_mobile.png" alt="icon tasks on board"/>
+                    <div class="tasksDivNr" id="taskInProgressDiv">1</div>
+                </div>
+                <div class="taskDivText">Task in Progress</div>
+            </button>
+        </div>
+        <div class="tasksDiv">
+            <button class="taskDiv" onclick="openBoard()">
+                <div class="taskDivImgAndNr">
+                    <img class="imgTaskDiv" src="../assets/img/awaiting-feedback_icon_mobile.png" alt="icon tasks on board"/>
+                    <div class="tasksDivNr" id="taskAwaitingFeedback">3</div>
+                </div>
+                <div class="taskDivText">Awaiting feedback</div>
+            </button>
+        </div>
+        <div class="tasksDiv">
+            <button class="taskDiv" onclick="openBoard()">
+                <div class="taskDivImgAndNr">
+                    <img class="imgTaskDiv" src="../assets/img/tasks-done_icon_mobile.png" alt="icon tasks on board"/>
+                    <div class="tasksDivNr" id="taskDone">4</div>
+                </div>
+                <div class="taskDivText">Tasks Done</div>
+            </button>
+        </div>
+    </div>
+</div>

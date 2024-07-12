@@ -1,0 +1,658 @@
+#contacts{
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+#mainFrame {
+  position: relative;
+  display: flex;
+  align-items: end;
+  width: 100%;
+  box-shadow: 2px 1px 1px rgba(50, 38, 38, 0.1);
+}
+
+.add-btn-frame{
+  position: absolute;
+  right: 32px;
+  bottom: 16px;
+}
+
+#groupFrame {
+  width: 100%;
+  margin-bottom: 0;
+  overflow-y: auto;
+  height: calc(100vh - 155px);
+}
+
+#addBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 8px;
+  height: 50px;
+  width: 50px;
+  padding: 0 4px;
+  background-color: var(--reg-blue);
+  color: white;
+  font-weight: 200;
+  margin-top: 16px;
+  padding: 12px;
+}
+
+.addBtnSpan{
+  display: none;
+}
+
+#addBtn img{
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+}
+
+#nameGroup{
+  margin: 32px;
+  margin-top: 56px;
+}
+
+.letter-box {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 12px;
+}
+
+.line-box {
+  width: 100%;
+  height: 16px;
+  gap: 12px;
+}
+
+.side-circle {
+  color: white;
+  border: 2px solid white;
+  font-family: "inter-regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: gray;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;  
+}
+
+.name-box {
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  cursor: pointer;
+  padding: 16px 16px;
+}
+
+.highlightContact{
+  background-color: var(--reg-blue);
+  color: white;
+}
+
+.highlightContact div .mail{
+  color:white;
+}
+
+.mail{
+  margin-top: 4px;
+  color: var(--mail-blue);
+}
+
+.detail-box{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 100%;
+  min-height: calc(100vh - 170px);
+  margin-top: 16px;
+}
+
+.detail-header{
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-headline{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.detail-name-box{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+}
+
+.detail-buttons{
+  display: none;
+  align-items: center;
+  margin-top: 4px;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.detail-buttons img{
+  height: 12px;
+  width: 12px;
+  object-fit: cover;
+}
+
+.close-detail{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.close-detail img{
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+}
+
+.detail-circle{
+  color: white;
+  border: 2px solid white;
+  font-family: "inter-regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: gray;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+}
+
+.detail-name{
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.detail-description{
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.detail-info a{
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+
+.detail-more-btn{
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  background-color: var(--reg-blue);
+  border: none;
+  height: 48px;
+  width: 48px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#drawer{
+  position: absolute;
+  bottom: 12px;
+  right: 0px;
+  height: 80px;
+  width: 90px;
+  background-color: white;
+  box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+  border-radius: 16px;
+  border-bottom-right-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  animation: var(--animation-timer) showDrawer ease-in-out;
+}
+@keyframes showDrawer {
+  from {
+    right: -100px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+.drawer-item{
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.drawer-item img{
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.popup-box{
+  position: absolute;
+  overflow: auto;
+  top: 84px; 
+  min-height: calc(100vh - 170px);
+  width: calc(100% - 16px);
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);  
+}
+
+.popup-box-edit, .popup-box-add{
+  top: 84px;
+  right: 8px;
+  animation: 0.6s showPopup ease-in-out;
+}
+
+@keyframes showPopup {
+  from {
+    right: -800px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+.popupCloseAdd{
+  display: none;
+  animation: 0.4s closePopup ease-in-out;
+}
+@keyframes closePopup {
+  from {
+    display: block;
+    right: 0px;
+  }
+  to {
+    display: block;
+    right: -800px;
+  }
+}
+
+.popupCloseEdit{
+  display: none;
+  animation: 0.4s closeEdit ease-in-out !important;
+}
+@keyframes closeEdit {
+  from {
+    display: block;
+    right: 0px;
+  }
+  to {
+    display: block;
+    right: -800px;
+  }
+}
+
+.pop-top{
+  position: relative;
+  padding: 16px;
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  font-family: var(--ff-inter);
+  padding-bottom: 80px;  
+  min-height: calc((100vh - 155px) / 3);
+}
+
+.closeEdit{
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+}
+
+.pop-bottom{
+  padding: 24px;
+  font-size: 12px;
+  transform: translateY(-50px);
+}
+
+.contact-frame{
+  margin-bottom: 16px;
+}
+
+.btn-box{
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 700px);
+  min-height: 40px;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+#btnContactDelete,#btnContactCreate{
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#btnContactDelete{
+  width: 80px;
+}
+
+.closeEdit img{
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+}
+
+.pop-header{
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+
+#pop-subtitle{
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+
+.pop-name-box{
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50px)
+}
+
+#popup-circle{
+  color: white;
+  border: 2px solid white;
+  font-family: "inter-regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: gray;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.contact-input {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  outline:none;
+  border-bottom: 1px solid var(--user-grey);
+  width: 100%;
+  line-height: 32px;
+  font-size: 18px;
+  padding-left: 16px;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 95%;
+  pointer-events: visible;
+}
+
+.contact-input::placeholder{
+  color: var(--user-grey);
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.contact-input:hover{
+  border-bottom: 1px solid var(--reg-blue);
+}
+
+.contact-name-img{
+  background-image: url(../assets/img/person_small.png);
+}
+
+.contact-email-img{
+  background-image: url(../assets/img/mail_small.png);
+}
+
+.contact-tel-img{
+  background-image: url(../assets/img/call_small.png);
+}
+
+.color-img-box {
+  display: flex;
+}
+
+.color-frame{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.color-box {
+  width: 24px;
+  height: 24px;
+  background-color: var(--user-grey);
+  /* default */
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.color-picker {
+  position: absolute;
+  z-index: 23;
+  /* display: flex ; is comming from openColorPicker() */
+  flex-wrap: wrap;
+  border: none;
+  background-color: rgb(97, 54, 54);
+  width: 72px;
+  /* 3 .color-option à 24px */
+  height: 72px;
+}
+
+.color-option {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+  z-index: 30;
+}
+
+.pop-logo{
+  display: none;
+}
+
+.d-nonePop-subtitle{
+  display: block;
+}
+
+.d-noneAddContact{
+  display: none;
+}
+
+@media(min-width: 800px){
+  .pop-logo{
+    display: block;
+    height:50px;
+    width: 50px;
+    object-fit: contain;
+    margin-top: 60px;
+    margin-bottom: 8px;
+  }
+
+  .d-nonePop-subtitle{
+    display: none;
+  }
+  
+  .d-noneAddContact{
+    display: block;
+  }
+  
+  #contacts{
+    margin-bottom: 16px;
+  }
+
+  #mainFrame {
+    display: flex !important;
+    max-width: 400px;
+  }
+
+  #groupFrame{
+    height: calc(100vh - 80px);
+    padding-top: 70px;
+  }
+  
+  .add-btn-frame{
+    position: absolute;
+    top:0;
+    bottom: unset;
+    left: 0px;
+    right: 0px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  }
+
+  #addBtn{
+    width: 300px;
+    cursor: pointer;   
+  }
+
+  .addBtnSpan{
+    display: block;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+
+  #nameGroup{
+    margin-top: 32px;
+  }
+
+  .detail-box{
+    animation: 225ms showInfo ease-in-out;
+  }
+  @keyframes showInfo {
+    from {
+      transform: translateX(300px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  .detail-more-btn{
+    display: none;
+  }
+
+  .detail-header{
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .detail-buttons{
+    display: flex;
+  }
+
+  .close-detail{
+    display: none;
+  }
+
+  .popup-box{
+    top: 0;
+    height: calc(100vh - 3px);
+    width: 500px;
+  }
+
+  .popup-box-add{    
+    right: 0;    
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  @keyframes showPopup {
+    from {
+      right: -500px;
+    }
+    to {
+      right: 0px;
+    }
+  }
+
+  @keyframes closePopup {
+    from {
+      display: block;
+      right: 0px;
+    }
+    to {
+      display: block;
+      right: -500px;
+    }
+  }
+
+  .pop-bottom{
+    padding: 0 72px;
+    transform: translateY(0px);
+  }
+
+  .pop-name-box{
+    padding-top: 40px;
+    transform: translateY(0px);
+  }
+
+  #popup-circle img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }
+
+  .popup-box-edit{
+    animation: 0.6s showEdit ease-in-out;
+    left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @keyframes showEdit {
+    from {
+      left: -500px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+
+
+  @keyframes closeEdit {
+    from {
+      display: block;
+      left: 0px;
+    }
+    to {
+      display: block;
+      left: -500px;
+    }
+  }
+}
+.more-row-box{
+  cursor: pointer;
+}

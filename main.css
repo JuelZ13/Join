@@ -1,0 +1,122 @@
+:root {
+  --animation-timer: 350ms;
+  --reg-blue: #4589ff;
+  --mail-blue: #4589ff;
+  --toggle-blue: #d2e3ff;
+  --light-grey: #e7e7e7;
+  --light-blue: #d2e3ff;
+  --dark-blue: #0038ff;
+  --strong-blue: #095dff;
+  /* for buttons and descriptions*/
+  --user-grey: #d1d1d1;
+  /* also for lines*/
+  --dark-grey: #8992a4;
+  /* icon-color in footer*/
+  --user-orange: #ff7a00;
+  --user-lila: #9327ff;
+  --user-blue: #6e52ff;
+  --user-rose: #fc71ff;
+  --user-yellow: #ffbb2b;
+  --user-green: #1fd7c1;
+  --user-red: #fb4746;
+  --user-turquoise: #24bee8;
+  --user-black-welcome-message: #2a3647;
+  --user-blue-welcome-message-name: #005dff;
+
+  
+  /*--- font-family NEW-------*/
+  --ff-opensans: "open-sans", sans-serif;
+  --ff-inter: "inter-regular", sans-serif;
+
+  /*--- font-size/weight -------*/
+  --fs-16px: 16px;
+  --fs-19px: 19px;
+  --fs-23px: 23px;
+  --fs-33px: 33px;
+  --fs-40px: 40px;
+  --fs-48px: 48px;
+  --fs-64px: 64px;
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+body{
+  margin: 0;
+  overflow: hidden;
+}
+
+#mainDiv{
+  display: flex;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "open-sans", sans-serif;
+}
+
+#transperant{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.d-none{
+  display: none !important;
+}
+
+.helpWrapperContainer{
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  padding: 32px;
+}
+
+.info-header{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 32px;
+}
+
+.info-header h1{
+  padding: 0;
+  font-size: 40px;
+}
+
+.jblue{
+  color: var(--mail-blue);
+}
+
+.helpWrapperContainer h2{
+  color: var(--mail-blue);
+  padding-top: 16px;
+}
+
+.divList{
+  display: flex;
+  gap: 32px
+}
+
+.back-btn{
+  background-color: transparent;
+  border:none;
+  cursor: pointer;
+}
+
+.legalList{
+  margin-left: 24px;
+}
+
+.helpWrapperContainer a{
+  color: var(--mail-blue);
+}
+
+
+@media (max-width: 799px){
+  .helpWrapperContainer{
+    height: calc(100vh - 155px);
+  }
+}

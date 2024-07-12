@@ -1,0 +1,25 @@
+<nav>
+  <img src="../assets/img/logo_mobile.png" alt="join logo" />
+  <div class="menuHelpNavContainer">
+    <div class="toolNameNav">Kanban Project Management Tool</div>
+    <div class="questionsNav" onclick="openHelp()">
+      <img src="../assets/img/help.png" alt="help question sign" />
+    </div>
+    <div class="userNameDivOuter" id="userNameDivOuter">
+      <div class="userNameDivInner" id="userNameDivInnerId" onclick="switchSubmenu()">
+        GU
+      </div>
+    </div>
+  </div>
+  <div class="submenuMobile d-none" id="submenuMobile" onclick="event.stopPropagation()">
+    <a class="showsubmenuhelp helpAnchorSubMenuHeader" onclick="openHelp()">Help</a>
+    <a onclick="openLegal()">Legal notice</a>
+    <a onclick="openPrivacy()">Privacy Policy</a>
+    <a onclick="openLogin()">Log out</a>
+  </div>
+</nav>
+
+
+
+
+

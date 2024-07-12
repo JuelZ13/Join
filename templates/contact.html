@@ -1,0 +1,125 @@
+<div id="mainFrame">
+    <div class="add-btn-frame">
+        <button id="addBtn" onclick="AddContact();">
+            <span class="addBtnSpan">Add new contact</span>
+            <img src="../assets/img/person_add.png" alt="">
+        </button>      
+    </div>
+    <div id="groupFrame">
+        <div id="nameGroup"></div>
+    </div>
+</div>
+        
+
+
+<div class="detail-box d-none" id="infoBox">
+    <div class="detail-header">
+        <div class="detail-headline">
+            <div>Contact Informations</div>
+            <button class="close-detail" id="closeInfo" onclick="closeInfo()"><img src="../assets/img/arrow-left-line.svg" alt="back"></button>   
+        </div>
+        <div class="detail-name-box">
+            <div class="detail-circle">
+                
+            </div>
+            <div>                      
+                <div class="detail-name">
+                
+                </div>
+                <div class="detail-buttons" id="moreRow">
+                    <div class="more-row-box" onclick="openEdit()">
+                        <img src="../assets/img/edit.png" alt="Edit">
+                        <span>Edit</span>
+                    </div>
+                    <div class="more-row-box" onclick="deleteContact()">
+                        <img src="../assets/img/delete.png" alt="Delete">
+                        <span>Delete</span>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <div>
+      <div class="detail-description">
+        Email
+      </div>
+      <div class="detail-info">
+        <a class="mail" href="mailto:${person.mail}">${person.mail}</a>
+      </div>
+      <div class="detail-description">
+        Phone
+      </div>
+      <div class="detail-info">
+        <a href="tel:${person.phone}">${person.phone}</a>
+      </div>
+    </div>
+          
+    <button class="detail-more-btn" id="moreBtn" onclick="openDrawer(event);">
+        <img src="../assets/img/more_btn.svg" alt="">
+    </button>
+    <div id="drawer" class="d-none">
+        <div class="drawer-item" onclick="openEdit()">
+            <img src="../assets/img/edit.png" alt="Edit">
+            <span>Edit</span>
+        </div>
+        <div class="drawer-item" onclick="deleteContact()">
+            <img src="../assets/img/delete.png" alt="Delete">
+            <span>Delete</span>
+        </div>
+    </div> 
+</div>
+
+<div class="popup-box popup-box-right popupCloseAdd" id="popupBox">
+    <div class="pop-top" id="popTop">
+        <a class="closeEdit" onclick="closePopup()"><img src="../assets/img/close.png" alt="close"></a>
+        <img class="pop-logo" src="../assets/img/logo_mobile_white.svg">
+        <span id="contactPopupHeadline" class="pop-header">Edit contact</span>
+        <span id="pop-subtitle" class="d-nonePop-subtitle">Tasks are better with a team!</span>
+    </div>
+    <div class="pop-name-box">
+        <div  onclick="openColorPicker()" id="popup-circle">
+            <img src="../assets/img/person_initial.png" alt="">
+        </div>
+    </div>
+    <div class="pop-bottom">
+        <div class="form-frame">
+            <form id="userForm" class="user-form">            
+                <div class="contact-frame">
+                    <div class="color-frame">
+                        Please choose a color: 
+                        <div id="colorBox" class="color-box editor" onclick="openColorPicker()">
+                            <div id="colorPicker" class="color-picker" style="display: none;">
+                                <!-- colors -->
+                            </div>
+                        </div>
+                    </div>
+                    <input class="contact-input contact-name-img" type="text" id="fullName"
+                        placeholder="Firstname Lastname" required pattern="^[a-zA-Z]+ [a-zA-Z]+$"
+                        title="Please enter firstname and lastname">  
+                        <div class="color-img-box">
+                    </div>
+                </div>
+                <div class="contact-frame">
+                    <input placeholder="Email" class="contact-input contact-email-img" required type="email" id="email">
+                </div>
+                <div class="contact-frame">
+                    <input class="contact-input contact-tel-img" required type="tel" id="phone"
+                        placeholder="Phone"
+                        title="9-15 Ziffern, opt. mit Leerzeichen oder + (+12345678901, 0123 4561234, 1 123 123 1234)">       
+                </div>
+                
+                <div class="btn-box">
+                    <button type="button" class="btnWhite" id="btnContactDelete">
+                        Delete
+                    </button>
+                    <button class="btnBlue" id="btnContactCreate" type="submit">
+                        Save
+                        <img src="../assets/img/check_small.png">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="d-none" id="success-info">Contact successfully created</div>

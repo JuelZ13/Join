@@ -1,0 +1,68 @@
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: calc(100vh - 144px);
+    margin: 32px;
+}
+
+.sidebarMenuContainer {
+    flex-direction: column;
+}
+
+.privacyLegalContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;    
+}
+
+.footerPolicyAnchor {
+    border: none;
+    background-color: white;
+    color: #42526e;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.btnFooterMenuDesktopVersion {
+    cursor: pointer;
+    display: flex;
+    padding: 12px;
+    gap:8px;
+}
+
+.btnFooterMenuDesktopVersion:hover {
+    background-color: var(--toggle-blue);
+    border-radius: 8px;
+}
+
+.footerPolicyAnchor:hover {
+    color: blue;
+}
+
+.footerPolicyAnchorSelect{
+    background-color: #4589FF;
+    color: white;
+}
+
+
+.btnsBackgroundColorActive {
+    background-color: var(--toggle-blue);
+}
+
+.selectedBtn{
+    background-color: var(--toggle-blue);
+    border-radius: 8px;
+}
+
+
+
+@media(max-width:799px){
+    #sidebar{
+      display: none;
+    }
+  }

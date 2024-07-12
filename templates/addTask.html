@@ -1,0 +1,80 @@
+<section class="add_task_section">
+    <div id="head-addTask" class="d-none">
+        <h1 id="addTaskHeadline">Add Task</h1> 
+        <img onclick="closeAddTaskBoard()" class="btn_x" src="../assets/img/close.svg" alt="">
+    </div>
+    <form id="addTaskForm" class="addTaskForm" onsubmit="addTask(event, 'toDo')">        
+        <div class="addTaskFormDiv">
+            <input type="text" id="title" class="addTaskInput" placeholder="Enter a title" required>
+            <div class="requiredAddTaskInput d-none" id="requiredTitle">This field is required</div>
+        </div>
+        
+        <div class="addTaskFormDiv">
+            <b>Description <span>(optional)</span></b>
+            <div contenteditable="true" id="addTaskDescription" class="addTaskDescription" data-text="Enter a Description" required></div>
+            <div class="requiredAddTaskInput d-none" id="requiredDescription">This field is required</div>
+        </div>
+
+        <div class="addTaskFormDiv">
+            <b>Due date</b>
+            <div>
+                <input class="addTaskInput" type="date" name="date" id="addTaskDate" placeholder="dd/mm/yyyy" required>
+                <i for="date" onclick="getCurrentDate()"></i>
+            </div>
+            <div class="requiredAddTaskInput d-none" id="requiredDate">This field is required</div>
+        </div>        
+
+        <div class="addTaskFormDiv">            
+            <b>Assigned to <span>(optional)</span></b>
+            <span class="addTaskInput" onclick="switchContactDropdown()"><span class="input-select">Select contacts to assign</span>
+                <img id="contact-img" src="../assets/img/arrow_drop_down.svg">
+            </span>
+            <div class="d-none" id="contact-options"></div> 
+            <div class="selected-contact" id="selected-contact"></div>
+        </div>
+
+        <div class="addTaskFormDiv">           
+            <b>Category</b>
+            <span id="selectedCategoryDiv" class="addTaskInput" onclick="switchCategoryOptions()"><span id="selected-category" class="input-select">Select task Category</span>
+                <img id="category-img" src="../assets/img/arrow_drop_down.svg">
+            </span>                                
+            <div id="dropdown-category" class="d-none">
+                <span onclick="setCategory('Technical Task')">Technical Task</span>
+                <span onclick="setCategory('User Story')">User Story</span>
+            </div>
+            <div class="requiredAddTaskInput d-none" id="requiredCategory">This field is required</div>
+        </div>   
+
+        <div class="addTaskFormDiv">
+            <b class="lbl-priority">Priority</b>
+            <div class="addTaskPrioDiv">
+                <span onclick="setPrio('urgent')" id="urgent">Urgent<img src="../assets/img/urgent.svg"></span>
+                <span onclick="setPrio('medium')" id="medium">Medium<img src="../assets/img/medium.svg"></span>
+                <span onclick="setPrio('low')" id="low">Low<img src="../assets/img/low.svg"></span>
+            </div>
+        </div>
+        
+        <div class="addTaskFormDiv">           
+            <b>Subtasks <span>(optional)</span></b>
+            <input id="addSubtaskInput" class="addTaskInput" type="text" placeholder="Add new subtask">
+            <div class="addSubTaskImgDiv">
+                <img class="addSubtaskImg addSubtaskImg1 " src="../assets/img/close.svg">
+                <img class="addSubtaskImg addSubtaskImg2" onclick="addSubtask(-1)" src="../assets/img/check_blue.svg">
+            </div>
+            <ul id="subtask-area">
+            </ul>
+        </div>
+    </form> 
+</section>
+
+<div class="addTaskBtnDiv">
+    <button id="addTaskClearBtn" onclick="clearForm(event)">
+        <span>Clear</span>
+        <img class="btn_x" src="../assets/img/x.svg" alt="">
+    </button>
+
+    <button id="addTaskCreateBtn" onclick="addTask(event,'toDo',-1)">
+        <span>Create Task</span>
+        <img class="btn_check" src="../assets/img/check_small.png" alt="">
+    </button>  
+</div>

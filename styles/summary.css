@@ -1,0 +1,330 @@
+#summary{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 75px;
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+}
+
+.welcomeMsgDiv {  
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.welcomeMsgDiv1 {  
+  display: flex;
+  animation: 2s showWelcome ease-in-out;
+}
+@keyframes showWelcome {
+  from {
+    display: flex;
+    position: absolute;
+    bottom: calc(100vh / 2 + 60px);
+  }
+  to {
+    display: flex;
+    position: absolute;
+    bottom: calc(100vh - 160px);
+  }
+}
+
+.welcomeText {
+  font-size: 32px;
+  color: var(--user-black-welcome-message);
+}
+
+.welcomeTextuserName {
+  font-size: 40px;  
+  color: var(--user-blue-welcome-message-name);
+}
+
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.summaryContainer1 {
+  animation: 2.5s showSummary ease-in-out;
+}
+@keyframes showSummary {
+  from {
+    position: absolute;
+    top: calc(100vh);;
+  }
+  to {
+    position: absolute;
+    top: 150px;
+  }
+}
+
+.clockAndTaskContainer{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+  
+.clockAndDateDiv {
+  max-height: 120px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--reg-blue);
+  border-radius: 30px;
+  padding: 24px;
+  cursor: pointer;
+  border: none;
+}
+  
+.lineClockAndDateDiv {
+  height: 95px;
+  border: 1.5px solid #ffffff;
+  border-radius: 3px;
+}
+  
+.clockAndTextDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  
+.clockAndTaskNrDiv {
+  display: flex;
+  align-items: center;
+}
+  
+.dateDiv{
+  text-align: left;
+}
+
+.date {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-23px);
+}
+  
+.deadlineText {
+  font-size: var(--fs-16px);
+}
+  
+.taskNrDiv {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-40px);
+}
+  
+.taskUrgentDiv {
+  font-weight: var(--fw-reg-mob);
+  font-size: var(--fs-reg-mob);
+}
+  
+  /******************************** Task To-do **************************************/
+  /*********************************************************************************/
+  
+  .imgAndNrTasksToDoDiv {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .tasksToDoDivText {
+    color: var(--reg-blue);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-19px);
+  }
+  
+  .tasksToDoDivNr {
+    font-weight: var(--fw-700);
+    font-size: var(--fs-48px);
+    padding-left: 24px;
+    padding-right: 20px;
+  }
+    
+  .tasksDivNr {
+    padding-left: 4px;
+    font-weight: var(--fw-700);
+    font-size: var(--fs-40px);
+  }
+   
+  .taskDivImgAndNr {
+    display: flex;
+    align-items: center;
+    font-size: var(--fs-40px);
+    font-weight: var(--fw-700);
+  }
+  
+  .taskDivText {
+    text-align: center;
+    font-size: var(--fs-19px);
+    font-weight: var(--fw-reg-mob);
+    color: var(--reg-blue);
+    margin-top: 7px;
+  }
+  
+  .taskDiv:hover {
+    color: #ffffff;
+    background-color: var(--dark-blue);
+    border-top-left-radius: 0;
+  }
+  
+  .taskDiv:hover .imgTaskDiv {
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+  
+  .taskDiv:hover .taskDivText {
+    color: #ffffff;
+    background-color: var(--dark-blue);
+  }
+  
+  .tasksToDoDiv:hover {
+    background-color: #ffffff;
+    border-top-left-radius: 0;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+  }
+  
+  .tasksToDoDiv:hover .tasksToDoDivNr {
+    color: var(--reg-blue);
+  }
+  
+  .clockAndDateDiv:hover {
+    background-color: #ffffff;
+    border-top-left-radius: 0;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+    color: var(--reg-blue);
+  }
+  
+  .clockAndDateDiv:hover .lineClockAndDateDiv {
+    border: 2px solid var(--dark-blue);
+  }
+
+  .tasksToDoDiv {
+    font-family: var(--ff-reg-mob);
+    max-height: 100px;
+    min-width: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 30px;
+    background-color: var(--light-blue);
+    padding: 24px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .tasksDiv {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--ff-reg-mob);
+    cursor: pointer;
+  }
+
+  .taskDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 142px;
+    width: 192px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+    padding: 24px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .tasksDivContainer{
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 400px;
+  }
+
+  @media(max-width:420px){
+    .taskDiv {
+      height: 142px;
+      width: 142px;
+    }
+
+    .tasksDivContainer{
+      max-width: 300px;
+    }
+  }
+
+  @media(min-width:800px){
+    #summary{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding-bottom: 0;
+      overflow-y: auto;
+      height: calc(100vh - 144px);
+    }
+  }
+
+  @media(min-width:850px){    
+    .welcomeMsgDiv {
+      display: flex;
+    }
+    
+    .welcomeMsgDiv1{
+      animation: none;
+    }
+
+    .summaryContainer1{
+      animation: none;
+    }
+
+
+    .summaryContainer{
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .clockAndDateDiv {
+      max-height: 142px;
+    }
+
+    .tasksDivContainer{
+      max-width: 650px;
+    }    
+    .tasksDivContainer :nth-child(1) { order: 1; }
+    .tasksDivContainer :nth-child(2) { order: 3; }
+    .tasksDivContainer :nth-child(3) { order: 2; }
+    .tasksDivContainer :nth-child(4) { order: 4; }
+    .tasksDivContainer :nth-child(5) { order: 5; }
+    .tasksDivContainer :nth-child(6) { order: 6; }
+    
+    .clockAndTaskContainer{
+      min-width: 65%;
+    }
+    .clockAndTaskContainer :nth-child(1) { order: 1; }
+    .clockAndTaskContainer :nth-child(2) { order: 2; }
+    .clockAndTaskContainer :nth-child(3) { order: 3; }
+    
+    .taskDiv {
+      max-height: none;
+      min-width: 142px;
+      height: 142px;
+      width: 142px;
+    }
+
+    .tasksToDoDiv{
+      max-height: none;
+      min-width: 142px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 142px;
+      width: 142px;
+    }
+  }

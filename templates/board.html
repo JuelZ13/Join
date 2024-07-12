@@ -1,0 +1,78 @@
+<div class="search-div">
+    <div id="search-bar">
+      <input type="search" name="search" id="search" placeholder="Find Task" oninput="searchTask()"/>
+      <div class="h-line"></div>
+      <img class="btn_check" src="../assets/img/search.svg" alt="">
+    </div>
+
+    <button id="create-task" onclick="openAddTaskBoard('toDo')">
+    <span>Add Task</span>
+    <img class="btn_check" src="../assets/img/btn_+.svg" alt="">
+  </button>
+</div>
+
+<section id="tasks">
+  <div class="card-parent">
+    <div class="row-title">
+      <b>To do</b>
+      <img onclick="openAddTaskBoard('toDo')" class="board-addBtn" src="../assets/img/plus button.svg" alt="">
+    </div>
+
+    <div
+      class="allsTsks"
+      id="toDo"
+      ondrop="moveTo('toDo')"
+      ondragleave="removeHighlight('toDo')"
+      ondragover="allowDrop(event); highlight('toDo')"
+    ></div>
+  </div>
+
+  <div class="card-parent">
+    <div class="row-title">
+      <b>In progress</b>
+      <img onclick="openAddTaskBoard('inProgress')" class="board-addBtn" src="../assets/img/plus button.svg" alt="">
+    </div>
+
+    <div
+      class="allsTsks"
+      id="inProgress"
+      ondrop="moveTo('inProgress')"
+      ondragleave="removeHighlight('inProgress')"
+      ondragover="allowDrop(event); highlight('inProgress')"
+    ></div>
+  </div>
+
+  <div class="card-parent">
+    <div class="row-title">
+      <b>Await feedback</b>
+      <img onclick="openAddTaskBoard('awaitFeedback')" class="board-addBtn" src="../assets/img/plus button.svg" alt="">
+    </div>
+
+    <div
+      class="allsTsks"
+      id="awaitFeedback"
+      ondrop="moveTo('awaitFeedback')"
+      ondragleave="removeHighlight('awaitFeedback')"
+      ondragover="allowDrop(event); highlight('awaitFeedback')"
+    ></div>
+  </div>
+
+  <div class="card-parent">
+    <div class="row-title">
+      <b>Done</b>
+    </div>
+
+    <div 
+      class="allsTsks" 
+      id="done" 
+      ondrop="moveTo('done')" 
+      ondragleave="removeHighlight('done')" 
+      ondragover="allowDrop(event); highlight('done')"
+    ></div>
+  </div>
+</section>
+
+<section id="show-task-container" class="show-task-container d-none" onclick="closeTaskContainer(event)">
+  <div class="taskpoUp" id="taskpoUp" onclick="taskPopUp(event)"></div>
+</section>
+
